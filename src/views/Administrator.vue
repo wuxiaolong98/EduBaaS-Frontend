@@ -25,13 +25,13 @@
             <el-submenu index="1">
               <template slot="title">
                 <i class="el-icon-document"></i>
-                <span>Template management</span>
+                <span>Template Management</span>
               </template>
               <el-menu-item index="uploadTemplate"
-                >Upload template</el-menu-item
+                >Upload Template</el-menu-item
               >
               <el-menu-item index="downloadTemplate"
-                >Download template</el-menu-item
+                >Download Template</el-menu-item
               >
             </el-submenu>
             <el-menu-item index="users">
@@ -40,7 +40,7 @@
             </el-menu-item>
             <el-menu-item index="courses">
               <i class="el-icon-date"></i>
-              <span slot="title">Course management</span>
+              <span slot="title">Course Management</span>
             </el-menu-item>
             <!-- <el-submenu index="3">
               <template slot="title">
@@ -50,7 +50,7 @@
               <el-menu-item index="#31">课程</el-menu-item>
               <el-menu-item index="#32">课件</el-menu-item>
             </el-submenu> -->
-            <el-menu-item index="experiment">
+            <el-menu-item index="#4">
               <i class="el-icon-data-analysis"></i>
               <span slot="title">实验管理</span>
             </el-menu-item>

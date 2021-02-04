@@ -5,6 +5,9 @@
       <el-breadcrumb-item>User Management</el-breadcrumb-item>
     </el-breadcrumb>
     <el-card>
+      <div slot="header">
+        <span>User information management</span>
+      </div>
       <el-input placeholder="" v-model="quaryString" clearable>
         <el-button
           slot="append"
