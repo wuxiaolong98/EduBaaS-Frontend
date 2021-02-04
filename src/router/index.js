@@ -13,32 +13,46 @@ const routes = [
   {
     path: "/home/administrator",
     name: "Administrator",
-    component: () => 
-      import(/* webpackChunkName: "Administrator" */ "../views/Administrator.vue"),
+    component: () =>
+      import(
+        /* webpackChunkName: "Administrator" */ "../views/Administrator.vue"
+      ),
     children: [
       {
-        path: "/home/administrator/welcome",
-        name: "Welcome",
-        component: () => 
-        import(/* webpackChunkName: "Welcome" */ "../components/Welcome.vue")
+        path: "/home/administrator/index",
+        name: "Index",
+        component: () =>
+          import(/* webpackChunkName: "Index" */ "../components/Index.vue")
       },
       {
         path: "/home/administrator/users",
         name: "Users",
-        component: () => 
-        import(/* webpackChunkName: "Users" */ "../components/Users.vue")
+        component: () =>
+          import(/* webpackChunkName: "Users" */ "../components/Users.vue")
       },
       {
         path: "/home/administrator/experiment",
         name: "Experiment",
-        component: () => 
-        import(/* webpackChunkName: "Experiment" */ "../components/Experiment.vue")
+        component: () =>
+          import(
+            /* webpackChunkName: "Experiment" */ "../components/Experiment.vue"
+          )
       },
       {
         path: "/home/administrator/uploadTemplate",
         name: "UploadTemplate",
-        component: () => 
-        import(/* webpackChunkName: "UploadTemplate" */ "../components/UploadTemplate.vue")
+        component: () =>
+          import(
+            /* webpackChunkName: "UploadTemplate" */ "../components/UploadTemplate.vue"
+          )
+      },
+      {
+        path: "/home/administrator/downloadTemplate",
+        name: "DownloadTemplate",
+        component: () =>
+          import(
+            /* webpackChunkName: "UploadTemplate" */ "../components/DownloadTemplate.vue"
+          )
       }
     ]
   },
@@ -73,16 +87,16 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  if(to.path == '/login' || to.path == '/register'){
+  if (to.path == "/login" || to.path == "/register") {
     return next();
   } else {
-    const token = window.sessionStorage.getItem('token');
-    if (!token){
-      return next('/login');
+    const token = window.sessionStorage.getItem("token");
+    if (!token) {
+      return next("/login");
     } else {
       next();
     }
   }
-})
+});
 
 export default router;

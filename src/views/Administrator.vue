@@ -3,7 +3,7 @@
     <el-container class="home-container">
       <el-header>
         <div>
-          <img src="../assets/logo.png" height="50px" alt="Logo">
+          <img src="../assets/logo.png" height="50px" alt="Logo" />
           <span>Blockchain Education Platform</span>
         </div>
         <div>
@@ -14,30 +14,42 @@
         </div>
       </el-header>
       <el-container>
-        <el-aside class="menu-vertical" >
-          <el-menu background-color="#232323" text-color="#ffffff" router 
-          :default-active="defaultActive" @select="selectChange">
+        <el-aside class="menu-vertical">
+          <el-menu
+            background-color="#232323"
+            text-color="#ffffff"
+            router
+            :default-active="defaultActive"
+            @select="selectChange"
+          >
             <el-submenu index="1">
               <template slot="title">
                 <i class="el-icon-document"></i>
-                <span>模板管理</span>
+                <span>Template management</span>
               </template>
-              <el-menu-item index="#11">下载模板</el-menu-item>
-              <el-menu-item index="#12">导出模板</el-menu-item>
-              <el-menu-item index="uploadTemplate">导入模板</el-menu-item>
+              <el-menu-item index="uploadTemplate"
+                >Upload template</el-menu-item
+              >
+              <el-menu-item index="downloadTemplate"
+                >Download template</el-menu-item
+              >
             </el-submenu>
             <el-menu-item index="users">
-                <i class="el-icon-user"></i>
-                <span slot="title">用户管理</span>
+              <i class="el-icon-user"></i>
+              <span slot="title">User Management</span>
             </el-menu-item>
-            <el-submenu index="3">
+            <el-menu-item index="courses">
+              <i class="el-icon-date"></i>
+              <span slot="title">Course management</span>
+            </el-menu-item>
+            <!-- <el-submenu index="3">
               <template slot="title">
                 <i class="el-icon-date"></i>
                 <span>课程管理</span>
               </template>
               <el-menu-item index="#31">课程</el-menu-item>
               <el-menu-item index="#32">课件</el-menu-item>
-            </el-submenu>
+            </el-submenu> -->
             <el-menu-item index="experiment">
               <i class="el-icon-data-analysis"></i>
               <span slot="title">实验管理</span>
@@ -65,13 +77,13 @@
           </el-menu>
         </el-aside>
         <el-container>
-            <el-main>
-              <!-- Components router. -->
-              <router-view></router-view>
-            </el-main>
+          <el-main>
+            <!-- Components router. -->
+            <router-view></router-view>
+          </el-main>
         </el-container>
       </el-container>
-  </el-container>
+    </el-container>
   </div>
 </template>
 
@@ -79,31 +91,30 @@
 // import avatarUrl from '@/assets/default_avatar.png'
 
 export default {
-  created: function (){
-    console.log(this)
-    this.username = window.sessionStorage.getItem('username');
+  created: function() {
+    console.log(this);
+    this.username = window.sessionStorage.getItem("username");
   },
-  data: function (){
+  data: function() {
     return {
       // avatarUrl: avatarUrl
-      username: '',
-      defaultActive: ''
-    }
+      username: "",
+      defaultActive: ""
+    };
   },
   methods: {
-    selectChange: function(index){
+    selectChange: function(index) {
       this.defaultActive = index;
     },
     logout: function() {
       window.sessionStorage.clear();
-      this.$router.push('/login');
+      this.$router.push("/login");
     }
   }
-}
+};
 </script>
 
 <style scoped>
-
 .home-container {
   height: 100%;
 }
@@ -129,8 +140,8 @@ export default {
 }
 
 .menu-vertical {
-  width: 100%;
+  /* Use '!important' to prevent pages from being changed by elment.style */
+  width: 250px !important;
   background-color: #232323;
 }
-
 </style>
